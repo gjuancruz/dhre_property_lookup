@@ -1,14 +1,21 @@
 {
   "version": 2,
-  "functions": {
-    "api/property_lookup.js": {
-      "runtime": "nodejs22.x"
+  "builds": [
+    {
+      "src": "api/*",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1.js"
+      "dest": "api/$1"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/"
     }
   ]
 }
