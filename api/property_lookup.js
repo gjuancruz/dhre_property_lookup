@@ -1,4 +1,6 @@
-export default async function handler(req, res) {
+const fetch = require('node-fetch');
+
+module.exports = async (req, res) => {
   const { reference_code } = req.body;
 
   const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQvmef7v68toFfSZj_1Q160E-4myzs-_mKhHB1aoTpIIH0c1WBmPYEiYEOzGDlgBHlm5jviilnvSyGG/pub?gid=2008777298&single=true&output=csv';
@@ -22,4 +24,4 @@ export default async function handler(req, res) {
   return res.json({
     result: `La propiedad es un ${property.título}, ubicada en ${property.ubicación}, con ${property.superficie} y un precio de ${property.precio}.`
   });
-}
+};
