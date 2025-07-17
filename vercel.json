@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/property_lookup.js": {
-      "runtime": "vercel/node@22.x"
+      "runtime": "nodejs22.x"
     }
   },
   "routes": [
