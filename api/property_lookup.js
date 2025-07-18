@@ -31,7 +31,7 @@ export default async function handler(req, res) {
         )
       );
 
-    const property = data.find((p) => p.reference_code === reference_code);
+    const property = data.find((p) => p.referencia === reference_code);
 
     if (!property) {
       return res.json({
@@ -40,7 +40,12 @@ export default async function handler(req, res) {
     }
 
     return res.json({
-      result: `La propiedad es un ${property.título}, ubicada en ${property.ubicación}, con ${property.superficie} y un precio de ${property.precio}.`,
+      result: `La propiedad es un ${property.tipo}, ubicada en ${property.zona}, ${property.municipio}. Consta de ${property.metros_cuadrados} con ${property.habitaciones} y un precio de ${property.precio}.
+      <br>
+      Descripción: ${property.descripcion}
+      <br>
+      Caracteristicas: ${property.caracteristicas}
+      `,
     });
   } catch (err) {
     console.error("Error interno:", err);
