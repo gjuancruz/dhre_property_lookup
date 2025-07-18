@@ -40,12 +40,7 @@ export default async function handler(req, res) {
     }
 
     return res.json({
-      result: `La propiedad es un ${property.tipo}, ubicada en ${property.zona}, ${property.municipio}. Consta de ${property.metros_cuadrados} con ${property.habitaciones} y un precio de ${property.precio}.
-      <br>
-      Descripción: ${property.descripcion}
-      <br>
-      Caracteristicas: ${property.caracteristicas}
-      `,
+      result: `La propiedad es un/a ${property.tipo_inmueble}, ubicada en ${property.zona}, ${property.municipio}. Consta de ${property.metros_cuadrados} metros cuadrados con ${property.habitaciones} y un precio de ${property.precio} euros.${<br></br>} Descripción: ${property.detalle}${<br></br>}Caracteristicas: ${property.caracteristicas}`,
     });
   } catch (err) {
     console.error("Error interno:", err);
