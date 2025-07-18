@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   try {
     const { reference_code } = req.body || {};
 
@@ -32,4 +32,4 @@ module.exports = async (req, res) => {
     console.error('Error interno:', err);
     return res.status(500).json({ error: 'Error interno del servidor.' });
   }
-};
+}
