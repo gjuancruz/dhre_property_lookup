@@ -31,7 +31,8 @@ export default async function handler(req, res) {
       summary: `La propiedad es un/a ${property.tipo_inmueble}, ubicada en ${property.zona}, ${property.municipio}. Consta de ${property.metros_cuadrados} metros cuadrados con ${property.habitaciones} y un precio de ${property.precio} euros.`,
       details: property.detalle,
       features: property.caracteristicas,
-      bedrooms: property.habitaciones
+      bedrooms: property.habitaciones,
+      price: `${property.precio} euros`,
     });
 
   } catch (err) {
